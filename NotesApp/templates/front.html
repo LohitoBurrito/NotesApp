@@ -1,0 +1,102 @@
+{% load static %}
+{% load mathfilters %}
+
+
+<!DOCTYPE html>
+<head>
+    <link rel="icon" href="">
+    <link rel="stylesheet" href="{% static 'front.css' %}">
+    <script src="{% static 'front.js' %}" defer></script>   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo"><a href="#Page1back">HOME</a></div>
+            <ul class="list">
+                <li><a href="#Page2">Purpose</a></li>
+                <li><a href="#Page3">Contacts</a></li>
+                <li><a href="#Page4">Donators</a></li>
+            </ul>
+            <div class="last"><a href="login">Notes</a></div>
+        </div>
+    </nav>
+    <div class="Page1" id="Page1">
+        <h1 id="scrollWords1">Knowledge</h1>
+        <h2 id="scrollWords2">is Power</h2>
+        <h3>created by: Lohit Muralidharan</h3>
+    </div>
+    <div class="Page1back" id="Page1back">
+    </div>
+    <div class="Page2" id="Page2">
+        <div class="container">
+            <div class="imagine" id="imagine">
+                <h1 id="ImagineWord">IMAGINE</h1>
+            </div>
+            <div class="Purpose">
+                <div class="RestOfWordsContainer">
+                    <h2 class="RestOfWords">a</h2>
+                </div>
+                <div class="RestOfWordsContainer">
+                    <h2 class="RestOfWords">marketplace</h2>
+                </div>
+                <div class="RestOfWordsContainer">
+                    <h2 class="RestOfWords">to</h2>
+                </div>
+                <div class="RestOfWordsContainer">
+                    <h2 class="RestOfWords">distribute</h2>
+                </div>
+                <div class="RestOfWordsContainer">
+                    <h2 class="RestOfWords">Free</h2>
+                </div>
+                <div class="RestOfWordsContainer">
+                    <h2 class="RestOfWords">Resources</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Page3" id="Page3">
+        <form method="POST" action="/">
+            {% csrf_token %}
+            <section class="contact-form">
+                <div class="container">
+                    <div class="contact-container" id="contact-container">
+                        <h1 id="contact">Contact</h1>
+                    </div>
+                    <input type="text" name="subject" placeholder="Subject"></input><br></br>
+                    <input type="email" name="email" placeholder="Email"></input><br></br>
+                    <textarea placeholder="Message" name="content" rows="10" cols="44"></textarea><br></br>
+                    <input type="Submit" name="send" value="Send"></input><br></br>
+                    <h2>Linkedin: https://www.linkedin.com/in/lohit-muralidharan-9160bb197</h2>
+                    <h2>Email: lohitm2@illinois.edu</h2>
+                </div>
+            </section>
+        </form>
+    </div>
+    <div class="Page4" id="Page4">
+        <div class ="container">
+            <div class="donation-container">
+                <span class="donationWords">Special</span>
+            </div>
+            <div class="donation-container">
+                <span class="donationWords">Thanks</span>
+            </div>
+            <div class="donation-container">
+                <span class="donationWords">to</span>
+            </div>
+            <div class="donation-container">
+                <span class="donationWords">our</span>
+            </div>
+            <div class="donation-container">
+                <span class="donationWords">Contributors</span>
+            </div>
+        </div>
+        <section class="names">
+            {% for person in creators %}
+                <h1>{{person.creatorName}}</h1>
+            {% endfor %}
+        </section>
+    </div>
+</body>
