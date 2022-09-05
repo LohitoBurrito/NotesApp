@@ -1,0 +1,424 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border box;
+    scroll-behavior: smooth;
+    font-family: 'Josefin Sans', sans-serif;
+}
+html:focus-within {
+    scroll-behavior: smooth;
+}
+body {
+    overflow-x: hidden;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.navbar {
+    background-color: black;
+    font-family: 'Josefin Sans', sans-serif;
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+    padding: 20px 0;
+}
+.navbar .navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbar .logo {
+    width: 55px;
+    margin-right: 4.5%;
+}
+.navbar .logo a{
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    letter-spacing: 1px;
+    box-shadow: inset 0 0 0 rgba(255, 255, 0, 0.389);
+    transition: 0.5s;
+}
+.navbar .logo:hover a{
+    width: 55px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    letter-spacing: 1px;
+    box-shadow: inset 300px 0 0 rgba(255, 255, 0, 0.389);
+}
+.navbar .last a{
+    color: black;
+    text-decoration: none;
+    padding: 0px 50px;
+    border-color: white;
+    letter-spacing: 1px;
+    background-color: white;
+    box-shadow: inset 0 0 0 0 #ff3c78;
+    border-radius: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: ease-out 0.3s;
+}
+.navbar .last a:hover{
+    color: white;
+    text-decoration: none;
+    padding: 0px 50px;
+    border-color: white;
+    letter-spacing: 1px;
+    background-color: white;
+    box-shadow: inset 300px 0 0 0 #ff3c78;
+    border-radius: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.list {
+    display: inline-flex;
+}
+.list li {
+    list-style: none;
+    padding: 0px 40px;
+}
+.list li a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+.list li a:after {
+    content: "";
+    position: absolute;
+    background-color: #ff3c78;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+.list li a:hover:after {
+    width:100%;
+}
+.Page1 {
+    background-image: url('background.png');
+    background-size: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 810px;
+    padding-top: 25px;
+    position: fixed;
+    z-index: -5;
+}
+.Page1 h1 {
+    color: white;
+    text-align: center;
+    font-weight:bold;
+    font-size: clamp(10px,0px + 20vw,200px);
+    font-family: 'Josefin Sans', sans-serif;
+    margin-top: 100px;
+}
+.Page1 h2 {
+    color: rgb(255, 82, 39);
+    text-align: center;
+    font-weight:bold;
+    font-size: clamp(10px,0px + 20vw,320px);
+    font-family: 'Josefin Sans', sans-serif;
+    margin-top: 0px;
+}
+@keyframes anim1 {
+    from {
+        margin-top: 150px;
+        opacity: 0;
+    }
+    to {
+        margin-top: 100px;
+        opacity: 1;
+    }
+}
+@keyframes anim2 {
+    from {
+        margin-top: 10px;
+        opacity: 0;
+    }
+    to {
+        margin-top: 0px;
+        opacity: 1;
+    }
+}
+.Page1 h3 {
+    transform: translateY(100px);
+    text-align: right;
+    vertical-align: bottom;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 100;
+    margin-right: 100px;
+    margin-top: -50px;
+}
+.Page1back {
+    height: 900px;
+    width: 100%;
+    background-color: transparent;
+}
+.Page2 {
+    height: 900px;
+    background-color: white;
+    z-index: -4;
+}
+.Page2 .container {
+    width: min-content;
+    padding-top: 70px;
+    padding-left: 30px;
+    padding-bottom: 10px;
+    display: inline-flex;
+}
+.Page2 .container .imagine {
+    width: clamp(100px,0px + 20vw,200px);
+    height: 850px;
+    transform: translateY(-65px);
+    overflow: hidden;
+}
+@keyframes page2Anim1 {
+    from {
+        transform: rotate(90deg) translateY(140px);
+    }
+    to {
+        transform: rotate(90deg) translateY(0px);
+    }
+}
+.Page2 .container .imagine h1 {
+    transform: rotate(90deg) translateY(140px);
+    font-weight: 100;
+    color: #b58e0e;
+    font-size: clamp(90px,14px + 11vw,180px);
+    font-family: 'Josefin Sans', sans-serif;
+    width: 50%;
+}
+.Page2 .container .Purpose {
+    vertical-align: baseline;
+    transform: translateY(-40px);
+    width: clamp(10px,0px + 55vw,900px);
+}
+.Page2 .container .Purpose .RestOfWordsContainer {
+    overflow: hidden;
+    width: clamp(300px,15px + 50vw,1000px);
+}
+.Page2 .container .Purpose .RestOfWordsContainer h2 {
+    margin-right: 20px;
+    font-weight: 100;
+    color: black;
+    font-size: clamp(10px,15px + 8vw,200px);
+    font-family: 'Josefin Sans', sans-serif;
+    transition: 0.35s;
+    transform: translateY(150px);
+}
+@keyframes page2Anim2 {
+    from {
+        transform: translateY(150px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+.Page2 .container .Purpose .RestOfWordsContainer h2:hover {
+    margin-right: 20px;
+    font-weight: 100;
+    color: rgb(73, 178, 222);
+    font-size: clamp(10px,15px + 8vw,200px);
+    font-family: 'Josefin Sans', sans-serif;
+}
+.Page3 {
+    height: 615px;
+    background-image: url(6875927.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px;
+    z-index: -3;
+}
+.Page3 .contact-form {
+    display: flex;
+    justify-content: center; 
+}
+.Page3 .contact-form .container{
+    width: 350px;
+    height: 500px;
+    background-color: transparent;
+    font-family: 'Josefin Sans', sans-serif;
+    color: white;
+    font-weight: 100;
+    padding: 20px;
+    border: 10px;
+    border-color: white;
+    border-width: 3px;
+    border-style: solid;   
+}
+.Page3 .contact-container{
+    overflow: hidden;
+    height: 55px;
+    margin-bottom: 25px;
+}
+@keyframes contactAnim {
+    from {
+        transform: translateY(70px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+.Page3 h1{
+    font-weight: 100;
+    text-align: center;
+    font-size: 55px;
+    box-shadow: inset 0 0 0 rgba(255, 255, 0, 0.389);
+    transition: 0.2s;
+    transform: translateY(55px);
+    width: 200px;
+    margin-left: 70px;
+}
+.Page3 h1:hover{
+    font-weight: 100;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 55px;
+    box-shadow: inset 300px 0 0 rgba(255, 255, 0, 0.578);
+    width: 200px;
+    margin-left: 70px;
+}
+.Page3 h2{
+    font-weight: 100;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+.Page3 input[type=text]{
+    font-family: 'Josefin Sans', sans-serif;
+    margin-left: 3.5%;
+    border-radius: 20px;
+    padding: 10px;
+    border: none;
+    width: 300px;
+}
+.Page3 input[type=email]{
+    font-family: 'Josefin Sans', sans-serif;
+    margin-left: 3.5%;
+    border-radius: 20px;
+    padding: 10px;
+    width: 300px;
+    border: none;
+}
+.Page3 input[type=Submit]{
+    margin-left: 35%;
+    border-radius: 20px;
+    padding: 10px;
+    width: 100px;
+    border: none;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: white;
+    box-shadow: inset 0 0 0 rgb(0, 180, 180);
+    transition: 0.2s;
+}
+.Page3 input[type=Submit]:hover{
+    margin-left: 35%;
+    border-radius: 20px;
+    padding: 10px;
+    width: 100px;
+    border: none;
+    font-family: 'Josefin Sans', sans-serif;
+    color: white;
+    box-shadow: inset 300px 0 0 rgb(21, 183, 183);
+}
+.Page3 textarea {
+    font-family: 'Josefin Sans', sans-serif;
+    border-radius: 20px;
+    border: none;
+    margin-left:3.5%;
+    padding: 10px;
+}
+.Page4 {
+    background-color: black;
+    height: 750px;
+    padding-top: 70px;
+    padding-left: 15px;
+    padding-right: 45px;
+    z-index: -4;
+}
+.Page4 h1{
+    display: inline-block;
+    padding: 10px;
+    border-radius: 20px;
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 100;
+    width: 200px;
+    background-color: white;
+    margin-left: 30px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: black;
+    box-shadow: inset 0 0 0 rgb(255, 89, 0);
+    transition: 0.2s;
+}
+.Page4 h1:hover{
+    display: inline-block;
+    padding: 10px;
+    border-radius: 20px;
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 100;
+    width: 200px;
+    margin: 20px;
+    font-size: 20px;
+    box-shadow: inset 300px 0 0 rgb(255, 89, 0);
+    color: white;
+}
+.Page4 .container {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+.Page4 .container .donation-container {
+    overflow: hidden;
+    height: 100px;
+    width:fit-content;
+}
+.Page4 .container .donation-container span{
+    display: inline-block;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 100;
+    margin-left: 30px;
+    margin-bottom: 20px;
+    font-size: 80px;
+    box-shadow: inset 0 0 0 rgb(255, 89, 0);
+    transition: 0.3s;
+    transform: translateY(110px);
+}
+@keyframes donateAnim {
+    from {
+        transform: translateY(110px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+.Page4 .container .donation-container span:hover{
+    text-align: center;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 100;
+    margin-left: 30px;
+    margin-bottom: 20px;
+    font-size: 80px;
+    box-shadow: inset 600px 0 0 rgba(255, 89, 0, 0.773);
+}
+@media (max-width: 555px) {
+    .Page4 .container .donation-container span{
+        font-size: 50px;
+    }
+    .Page4 .container .donation-container span:hover{
+        font-size: 50px;
+    }
+}

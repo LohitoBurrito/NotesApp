@@ -1,0 +1,52 @@
+{% load static %}
+
+<head>
+    <link rel="stylesheet" href="{% static 'giesBui.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <header>
+            <div class="siderbar-menu">
+                <a href="#"><h2>Welcome, {{user.username}}</h2></a>
+                <a href="addNotesGies"><h1>Add Your Notes</h1></a>
+                <a href="login"><h1>Sign Out</h1></a>
+                <a href="/"><h1>Logout</h1></a>
+            </div>
+        </header>
+        <main>
+            <div class="displayNotes">
+                <div class="search">
+                    <form method="POST" action="gies">
+                        {% csrf_token %}
+                        <select name="Courses" id="Courses">
+                            <option value="CourseTag">All Course Tags</option>
+                            {% for major in selected %}
+                                <option value={{major.name}}>{{major.name}}</option>
+                            {% endfor %}
+                        </select>
+                        <input type="text" placeholder="Course Number" name="Course_Number"></input>
+                        <input type="text" placeholder="Name of Notes" name="name"></input>
+                        <input type="text" placeholder="Creator Name" name="maker"></input>
+                        <input type="Submit" name="ApplyFilters">
+                    </form>
+                </div>
+                <section class="notes">
+                    {% for note in displayedNotes %}
+                    <div class="noteTag">
+                        <h1> {{note.name}} </h1>
+                        <h1> Created by: {{note.creator}} </h1>
+                        <h2> {{note.courseTag}} {{note.courseNum}}</h2>
+                        {% if note.creator == user.username %}
+                            <a href= "{% url 'edit' note.id 'gies' %}"><h4>Edit Note</h4></a>   
+                        {% endif %}
+                        <a href="{{note.file.url}}" download="{{note.file.url}}"><h3>Download File</h3></a>
+                    </div>
+                    {% endfor %}
+                </section>
+            </div>
+        </main>
+    </div>
+</body>

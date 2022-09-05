@@ -1,0 +1,35 @@
+body {
+    background-image: url(6875927.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+h1 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 40px;
+    font-weight: 100;
+    text-align: center;
+    margin-top: 20%;
+    color: white;
+}
+input {
+    border-radius: 20px;
+    padding: 10px;
+    font-family: 'Josefin Sans', sans-serif;
+    color: black;
+    background-color: white;
+    border: none;
+    margin-left: 47.5%;
+    font-size: 20px;
+    box-shadow: inset 0 0 0 cyan;
+    transition: 0.2s;
+}
+input:hover {
+    border-radius: 20px;
+    padding: 10px;
+    font-family: 'Josefin Sans', sans-serif;
+    color: white;
+    border: none;
+    margin-left: 47.5%;
+    font-size: 20px;
+    box-shadow: inset 300px 0 0 rgb(20, 207, 207);
+}

@@ -1,0 +1,35 @@
+{% load static %}
+<head>
+    <link rel="stylesheet" href="{% static 'addNotesGraingerEng.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="container2">
+        <div class="login-register">
+            <form method="POST" action="addNotesGrainger" enctype="multipart/form-data">
+                {% csrf_token %} 
+                <h1>Add Your Notes</h1>
+                <select name="CourseTag" id="CourseTag">
+                    <option value="choose">Choose Major</option>
+                    {% for major in selected %}
+                    <option value={{major.name}}>{{major.name}}</option>
+                    {% endfor %}
+                </select>
+                <div class="container">
+                    <input type="CourseNumber" placeholder="Course Number" name="CourseNumber" />
+                </div>
+                <div class="container">
+                    <input type="NameOfNotes" placeholder="Name Of Notes" name="NameOfNotes" />
+                </div>
+                <div class="container">
+                    <input type="file" name="file"/>
+                </div>
+                <div class="container3">
+                    <input type="Submit" name="ReturnButton"/>
+                </div>
+            </form>
+        </div>
+    </section>
+</body>

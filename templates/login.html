@@ -1,0 +1,66 @@
+{% load static %}
+
+{% for message in messages %}
+<h5>{{message}}</h5>
+{% endfor %}
+<head>
+    <link rel="stylesheet" href="{% static 'register-login.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="container2">
+        <div class="login-register">
+            <form method="POST" action="login">
+                {% csrf_token %} 
+                <h1>Login</h1>
+                <div class="container">
+                    <input type="text" name="username" />
+                    <label>Username</label>
+                </div>
+                <div class="container">
+                    <input type="password" name="password" />
+                    <label>Password</label>
+                </div>
+                <select name="Department" id:"Department">
+                    <option value="choose-department">Choose Department</option>
+                    <option value="grainger">Grainger</option>
+                    <option value="las">Las</option>
+                    <option value="gies">Gies</option>
+                </select>
+                <div class="container3">
+                    <input type="Submit" name="loginButton"/>
+                </div>
+                <p>
+                    Don't Worry! This is only used to calculate the amount of users. Trust, we don't send emails or verifications, PLUS ... ITS FREE!
+                </p>
+            </form>
+        </div>
+        <div class="login-register">
+            <form method="POST" action="login">
+                {% csrf_token %} 
+                <h1>Register</h1>
+                <div class="container">
+                    <input type="text" name="username" />
+                    <label>Username</label>
+                </div>
+                <div class="container">
+                    <input type="email" name="email"/>
+                    <label>Email</label>
+                </div>
+                <div class="container">
+                    <input type="password" name="password" />
+                    <label>Password</label>
+                </div>
+                <div class="container">
+                    <input type="password" name="password2" />
+                    <label>Re-type Password</label>
+                </div>
+                <div class="container3">
+                    <input type="Submit" name="registerButton"/>
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
