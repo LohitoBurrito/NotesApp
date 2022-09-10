@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-zq-aw@l_^fv1=k2)m%g7r55ilgfz1p1mhkajb=!35)w2%3&r)m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://notes-app-uiuc-v1.herokuapp.com/']
+ALLOWED_HOSTS = ['https://notes-app-uiuc-v1.herokuapp.com/','http://127.0.0.1/']
 
 
 # Application definition
@@ -78,13 +78,24 @@ WSGI_APPLICATION = 'NotesApp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+#    }
+#}
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'nEEu3QT2sxGddIF9fo0h',
+        'HOST': 'containers-us-west-45.railway.app',
+        'PORT': '5768',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -122,7 +133,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = [
-    BASE_DIR/ 'staticfiles'
+    BASE_DIR / 'staticfiles'
 ]
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
