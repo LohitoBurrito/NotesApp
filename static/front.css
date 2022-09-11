@@ -115,7 +115,7 @@ body {
     color: white;
     text-align: center;
     font-weight:bold;
-    font-size: clamp(10px,0px + 20vw,200px);
+    font-size: clamp(7px,0px + 18vw,200px);
     font-family: 'Josefin Sans', sans-serif;
     margin-top: 100px;
 }
@@ -123,7 +123,7 @@ body {
     color: rgb(255, 82, 39);
     text-align: center;
     font-weight:bold;
-    font-size: clamp(10px,0px + 20vw,320px);
+    font-size: clamp(7px,0px + 20vw,320px);
     font-family: 'Josefin Sans', sans-serif;
     margin-top: 0px;
 }
@@ -443,7 +443,7 @@ body {
         color: white;
         text-align: center;
         font-weight:bold;
-        font-size: clamp(10px,0px + 20vw,200px);
+        font-size: clamp(7px,0px + 18vw,200px);
         font-family: 'Josefin Sans', sans-serif;
         margin-top: 30%;
     }
