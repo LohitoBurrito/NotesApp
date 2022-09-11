@@ -89,11 +89,11 @@ WSGI_APPLICATION = 'NotesApp.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'railway',
+        'NAME': 'test',
         'USER': 'postgres',
-        'PASSWORD': 'nEEu3QT2sxGddIF9fo0h',
-        'HOST': 'containers-us-west-45.railway.app',
-        'PORT': '5768',
+        'PASSWORD': 'Momuloda2603',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
