@@ -295,7 +295,9 @@ body {
 }
 .Page3 input[type=text]{
     font-family: 'Josefin Sans', sans-serif;
-    margin-left: 3.5%;
+    display: block;
+    margin: auto;
+    margin-top: -15px;
     border-radius: 20px;
     padding: 10px;
     border: none;
@@ -303,15 +305,19 @@ body {
 }
 .Page3 input[type=email]{
     font-family: 'Josefin Sans', sans-serif;
-    margin-left: 3.5%;
+    display: block;
+    margin: auto;
+    margin-top: -15px;
     border-radius: 20px;
     padding: 10px;
     width: 300px;
     border: none;
 }
 .Page3 input[type=Submit]{
-    margin-left: 35%;
+    display: block;
+    margin: auto;
     border-radius: 20px;
+    margin-top: -15px;
     padding: 10px;
     width: 100px;
     border: none;
@@ -321,8 +327,10 @@ body {
     transition: 0.2s;
 }
 .Page3 input[type=Submit]:hover{
-    margin-left: 35%;
+    display: block;
+    margin: auto;
     border-radius: 20px;
+    margin-top: -15px;
     padding: 10px;
     width: 100px;
     border: none;
@@ -332,9 +340,11 @@ body {
 }
 .Page3 textarea {
     font-family: 'Josefin Sans', sans-serif;
+    margin: auto;
     border-radius: 20px;
+    margin-top: -15px;
     border: none;
-    margin-left:3.5%;
+    display: block;
     padding: 10px;
 }
 .Page4 {
