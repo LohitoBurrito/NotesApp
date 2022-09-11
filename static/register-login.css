@@ -167,7 +167,7 @@ body {
     border-radius: 20px;
     box-shadow: inset 300px 0 0 0 #2691d9;
 }
-@media (max-width: 775px) {
+@media (max-width: 980px) {
     .container2 {
         transform: translateY(10%);
         display: block;

@@ -13,29 +13,6 @@ let restOfWordsContainer = document.getElementsByClassName('RestOfWordsContainer
 let restOfWords = document.getElementsByClassName('RestOfWords');
 
 
-window.addEventListener('scroll', function scrollingEffect() {
-    let val = window.scrollY;
-    heading1.style.transform = 'translateY(' + -val * 0.2 + 'px)';
-    heading2.style.transform = 'translateY(' + -val * 0.2 + 'px)';
-    if (window.pageYOffset > 0) {
-        var divOffsetTop = page2.offsetTop;
-        let opacityVal = 1 - window.pageYOffset / divOffsetTop;
-        page1.style.opacity = opacityVal;
-    }
-    if (imagine.getBoundingClientRect().top <= 600) {
-        imagineWord.style.animation = 'page2Anim1 1.5s forwards ease-out';
-    } else {
-        imagineWord.style.animation = 'none';
-    }  
-    for (let i = 0; i < restOfWordsContainer.length; i++) {
-        if (restOfWordsContainer[i].getBoundingClientRect().top <= 500) {
-            restOfWords[i].style.animation = 'page2Anim2 1s forwards ease-out';
-        } else {
-            restOfWords[i].style.animation = 'none';
-        }     
-    }
-});
-
 window.addEventListener('load', function pageFullyLoaded() {
     heading1.style.animation = 'anim1 2s forwards ease-out';
     heading2.style.animation = 'anim2 2s forwards ease-out';
@@ -109,7 +86,50 @@ const observer6 = new IntersectionObserver((entries) => {
         threshold: [0, 0.25, 0.5, 0.75, 1]
     }
 );
-
+const observer7 = new IntersectionObserver((entries) => {
+    if (entries[0].intersectionRatio > 0) {
+        imagineWord.style.animation = 'page2Anim1 1.5s forwards ease-out';
+    } else {
+        imagineWord.style.animation = 'none';
+    }
+});
+window.addEventListener('scroll', function scrollingEffect() {
+    let val = window.scrollY;
+    heading1.style.transform = 'translateY(' + -val * 0.2 + 'px)';
+    heading2.style.transform = 'translateY(' + -val * 0.2 + 'px)';
+    if (window.pageYOffset > 0) {
+        var divOffsetTop = page2.offsetTop;
+        let opacityVal = 1 - window.pageYOffset / divOffsetTop;
+        page1.style.opacity = opacityVal;
+    }
+    if (this.screen.width < 550) {
+        if (imagine.getBoundingClientRect().top <= 1700) {
+            imagineWord.style.animation = 'page2Anim1 1.5s forwards ease-out';
+        } else {
+            imagineWord.style.animation = 'none';
+        }  
+        for (let i = 0; i < restOfWordsContainer.length; i++) {
+            if (restOfWordsContainer[i].getBoundingClientRect().top <= 1500) {
+                restOfWords[i].style.animation = 'page2Anim2 1s forwards ease-out';
+            } else {
+                restOfWords[i].style.animation = 'none';
+            }     
+        }
+    } else {
+        if (imagine.getBoundingClientRect().top <= 600) {
+            imagineWord.style.animation = 'page2Anim1 1.5s forwards ease-out';
+        } else {
+            imagineWord.style.animation = 'none';
+        }  
+        for (let i = 0; i < restOfWordsContainer.length; i++) {
+            if (restOfWordsContainer[i].getBoundingClientRect().top <= 650) {
+                restOfWords[i].style.animation = 'page2Anim2 1s forwards ease-out';
+            } else {
+                restOfWords[i].style.animation = 'none';
+            }     
+        }
+    }
+});
 observer1.observe(contactContainer);
 observer2.observe(donationContainer[0]);
 observer3.observe(donationContainer[1]);
