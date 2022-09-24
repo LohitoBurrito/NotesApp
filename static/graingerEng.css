@@ -4,8 +4,6 @@
     list-style: none;
     text-decoration: none;
     font-family: 'Josefin Sans', sans-serif;
-    display: flex;
-    justify-content: center;
 }
 body {
     background: url(planet-abstract-purple-gradient-5k-1f.webp) fixed center;
