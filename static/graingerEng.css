@@ -97,10 +97,9 @@ body {
     .navbar main .search form {
         display: inline-block;
         gap: 20px 20px;
-    }    
+    }
     body {
-        background-image: none;
-        background-color: bisque;
+        width:150%;
     }
 }
 .navbar {
